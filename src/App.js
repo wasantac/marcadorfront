@@ -4,8 +4,7 @@ import Main from './pages/Main';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Marcador from './pages/Marcador';
 function App() {
