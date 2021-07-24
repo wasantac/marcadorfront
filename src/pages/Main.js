@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from 'react';
 import {io} from 'socket.io-client';
-import {Container,Form, FormGroup, Label, Input,Button} from 'reactstrap';
+import {Container,Form, FormGroup, Label, Input,Button,Col,Row} from 'reactstrap';
+
+import '../styles/main.css'
 
 const {REACT_APP_URL} = process.env;
 
@@ -17,43 +19,57 @@ const Main = () => {
             s.disconnect();
         }
     },[]);
+    let triangles = [];
+    for(let i = 0; i < 25 ; i++){
+      triangles.push(<span className="triangle" key={i}></span>)
+    }
     return (
-        <div>
-            <Container>
-                <Form>
-                    <FormGroup>
-                    <Label for="p1">Player 1</Label>
-                    <Input type="text" name="p1" id="p1" onChange={ e => {
-                        setOne(e.target.value)
-                    }}/>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label for="p1points">Player 1 Points</Label>
-                    <Input type="number" name="p1points" id="p1points" onChange={ e => {
-                        setP1(e.target.value)
-                    }}/>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label for="p2">Player 2</Label>
-                    <Input type="text" name="p2" id="p2" onChange={ e => {
-                        setTwo(e.target.value)
-                    }}/>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label for="p2points">Player 2 Points</Label>
-                    <Input type="number" name="p2points" id="p2points" onChange={ e => {
-                        setP2(e.target.value)
-                    }}/>
-                    </FormGroup>
+        <div className="mh-100 fondo">
+
+            <Container className="arriba">
+            <img class="Sirv logo593" data-src="https://baxpidan.sirv.com/logo593.png?cy=75&cw=0&ch=150&w=300&h=300" alt="" />
+                <Form className="mb-5">
+                    <Row>
+                        <Col sm={6} md={6}>
+                            <FormGroup>
+                                <Label for="p1"><h3 className="text-white">Player 1</h3></Label>
+                                <Input type="text" name="p1" id="p1" onChange={ e => {
+                                    setOne(e.target.value)
+                                }}/>
+                            </FormGroup>
+                                <FormGroup>
+                                <Label for="p1points"><h3 className="text-white">Player 1 Points</h3></Label>
+                                <Input type="number" name="p1points" id="p1points" onChange={ e => {
+                                    setP1(e.target.value)
+                                }}/>
+                            </FormGroup>
+                        </Col>
+                        <Col sm={6} md={6}>
+                        <FormGroup>
+                            <Label for="p2"><h3 className="text-white">Player 2</h3></Label>
+                            <Input type="text" name="p2" id="p2" onChange={ e => {
+                                setTwo(e.target.value)
+                            }}/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="p2points"><h3 className="text-white">Player 2 Points</h3></Label>
+                            <Input type="number" name="p2points" id="p2points" onChange={ e => {
+                                setP2(e.target.value)
+                            }}/>
+                        </FormGroup>
+                        </Col>
+                    </Row>
+                    
+
                 </Form>
-                <Button onClick={e => {
+                <Button className="btn-danger" onClick={e => {
                     socket.emit("send-data",{
                         p1: [playerone,p1points],
                         p2: [playertwo,p2points],
                     });
-                }}>Boton</Button>
+                }}>Actualizar Marcador</Button>
             </Container>
-
+        
         </div>
     );
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&display=swap");
 p {
   color: #fff;
   display: -webkit-box;
@@ -225,7 +226,7 @@ p {
   width: 250px;
   opacity: 0.7;
   position: absolute;
-  left: 25%;
+  left: 23%;
 }
 
 .nombre-izq span:nth-child(1) {
@@ -279,7 +280,7 @@ p {
   width: 250px;
   opacity: 0.7;
   position: absolute;
-  right: 25%;
+  right: 23%;
 }
 
 .nombre-der span:nth-child(1) {
@@ -336,8 +337,21 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 6px;
-  -webkit-transform: skew(0deg);
-          transform: skew(0deg);
+  margin-top: 15%;
+  font-family: 'Graduate', cursive;
+}
+
+.noskewleft {
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
+}
+
+.noskewright {
+  -webkit-transform: skew(20deg);
+          transform: skew(20deg);
+}
+
+.nombre {
+  font-family: 'Roboto', sans-serif;
 }
 /*# sourceMappingURL=marcador.css.map */

@@ -33,28 +33,28 @@ const Marcador = () => {
             <div className="nombre-izq">
                 <span></span>
                 <span></span>
-                <p>{playerone}</p>
+                <p className="nombre">{playerone}</p>
             </div>
             <div className="paralelogramo izquierdo neon">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <p className="noskew">{p1points}</p>
+                <p className="noskew noskewleft">{p1points}</p>
             </div>    
         </div>
         <div className="flx">
             <div className="nombre-der">
                 <span></span>
                 <span></span>
-                <p>{playertwo}</p>
+                <p className="nombre">{playertwo}</p>
             </div>
             <div className="paralelogramo derecho neon">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <p className="noskew">{p2points}</p>
+                <p className="noskew noskewright">{p2points}</p>
             </div>
         </div>
     </div>
