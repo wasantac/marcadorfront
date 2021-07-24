@@ -3,14 +3,12 @@ import {io} from 'socket.io-client';
 import '../styles/marcador.css'
 const {REACT_APP_URL} = process.env;
 const Marcador = () => {
-    const [socket,setSocket] = useState();
     const [playerone,setOne] = useState("player1");
     const [p1points,setP1] = useState(0);
     const [playertwo,setTwo] = useState("player2");
     const [p2points,setP2] = useState(0);
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
-        setSocket(s);
         s.on("receive-data", data => {
             
             console.log(data)
