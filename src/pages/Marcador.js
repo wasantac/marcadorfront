@@ -15,8 +15,8 @@ const Marcador = () => {
             try{
                 setOne(data.p1[0]);
                 setP1(data.p1[1]);
-                setTwo(data.p[0]);
-                setP2(data.p[1]);
+                setTwo(data.p2[0]);
+                setP2(data.p2[1]);
             } catch (err) {
                 console.log(err)
             }
