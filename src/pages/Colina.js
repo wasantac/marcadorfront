@@ -6,6 +6,7 @@ const Colina = () => {
     const [playerone,setOne] = useState("player1");
     const [p1points,setP1] = useState(0);
     const [socket,setSocket] = useState();
+    const [show,setShow] = useState(false);
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
         setSocket(s);
@@ -31,11 +32,17 @@ const Colina = () => {
                         }}/>
                 </FormGroup>
             </Form>
-            <Button className="btn-danger mt-5" onClick={e => {
+            <Button className="btn-danger mt-5 mx-5" onClick={e => {
                     socket.emit("rey-colina",{
                         p1: [playerone,p1points],
                     });
                 }}>Actualizar Marcador</Button>
+            <Button className="btn-danger mt-5 mx-5" onClick={e => {
+                    setShow(!show)
+                    socket.emit("send-ganador",{
+                        ganador: show
+                    });
+            }}>Mostrar Ganador</Button>
                 <br></br>
                 <a href="/" className="btn btn-warning my-3">Ir a  menu principal</a>
             </Container>

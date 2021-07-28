@@ -50,6 +50,77 @@
           animation: sombra 2s ease 0s infinite alternate;
 }
 
+.bigtext {
+  font-size: 200px;
+  -webkit-animation: movebig 2s ease 0s;
+          animation: movebig 2s ease 0s;
+}
+
+.ganador {
+  font-family: 'Roboto', sans-serif;
+  color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  -webkit-animation: moveganador 2s ease 0s;
+          animation: moveganador 2s ease 0s;
+}
+
+@-webkit-keyframes movebig {
+  0% {
+    font-size: 0px;
+  }
+  90% {
+    font-size: 220px;
+  }
+  100% {
+    font-size: 200px;
+  }
+}
+
+@keyframes movebig {
+  0% {
+    font-size: 0px;
+  }
+  90% {
+    font-size: 220px;
+  }
+  100% {
+    font-size: 200px;
+  }
+}
+
+@-webkit-keyframes moveganador {
+  0% {
+    font-size: 0px;
+  }
+  90% {
+    font-size: 60px;
+  }
+  100% {
+    font-size: 50px;
+  }
+}
+
+@keyframes moveganador {
+  0% {
+    font-size: 0px;
+  }
+  90% {
+    font-size: 60px;
+  }
+  100% {
+    font-size: 50px;
+  }
+}
+
+.ocultar {
+  display: none;
+}
+
 .puntos {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;

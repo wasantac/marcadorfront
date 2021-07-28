@@ -37,6 +37,46 @@ box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 12px 0px rgba(255,15,15,1);
     animation: sombra 2s ease 0s infinite alternate; 
 }
+.bigtext{
+    font-size: 200px;
+    animation: movebig 2s ease 0s;
+}
+.ganador{
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    animation: moveganador 2s ease 0s;
+}
+@keyframes movebig{
+    0%{
+        font-size: 0px;
+    }
+    90%{
+        font-size: 220px;
+    }
+    100%{
+        font-size: 200px;
+    }
+}
+@keyframes moveganador{
+    0%{
+        font-size: 0px;
+    }
+    90%{
+        font-size: 60px;
+    }
+    100%{
+        font-size: 50px;
+    }
+}
+
+.ocultar{
+    display: none;
+}
 
 .puntos{
     font-family: 'Roboto', sans-serif;

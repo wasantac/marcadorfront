@@ -4,6 +4,7 @@ import '../styles/colina.css'
 const {REACT_APP_URL} = process.env;
 const Colinamarcador = () => {
     const [playerone,setOne] = useState("player1");
+    const [show,setShow] = useState(true);
     const [p1points,setP1] = useState(0);
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
@@ -17,7 +18,11 @@ const Colinamarcador = () => {
                 console.log(err)
             }
 
-        })
+        });
+        s.on("ganador",data =>{
+            console.log(data)
+            setShow(data.ganador)
+        });
         return () => {
             s.disconnect();
         }
@@ -29,6 +34,9 @@ const Colinamarcador = () => {
             </div>
             <div className="puntoking">
                 <span className="puntos">{p1points}</span>
+            </div>
+            <div className={show ? "ganador" : "ocultar"}>
+                <span className="bigtext">{playerone}<br></br></span> es el rey de la colina
             </div>
             
         </div>
