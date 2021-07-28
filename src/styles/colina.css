@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&display=swap");
+body {
+  background-color: transparent;
+}
+
 .nombreking {
   color: #fff;
   font-family: 'Graduate', cursive;
@@ -52,15 +56,14 @@
 
 .bigtext {
   font-size: 200px;
+  font-family: 'Graduate', cursive;
   -webkit-animation: movebig 2s ease 0s;
           animation: movebig 2s ease 0s;
 }
 
 .ganador {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Graduate', cursive;
   color: #fff;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -69,6 +72,32 @@
   font-size: 50px;
   -webkit-animation: moveganador 2s ease 0s;
           animation: moveganador 2s ease 0s;
+}
+
+.opaco {
+  background-color: rgba(0, 0, 0, 0.397);
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation: opacar 2s ease 0s;
+          animation: opacar 2s ease 0s;
+}
+
+@-webkit-keyframes opacar {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes opacar {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 @-webkit-keyframes movebig {

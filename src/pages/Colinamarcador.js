@@ -29,6 +29,7 @@ const Colinamarcador = () => {
     },[])
     return (
         <div>
+            <div className={show ? "opaco" : "ocultar"}></div>
             <div className="nombreking">
                 {playerone}
             </div>
