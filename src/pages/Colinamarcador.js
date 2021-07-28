@@ -4,7 +4,7 @@ import '../styles/colina.css'
 const {REACT_APP_URL} = process.env;
 const Colinamarcador = () => {
     const [playerone,setOne] = useState("player1");
-    const [show,setShow] = useState(true);
+    const [show,setShow] = useState(false);
     const [p1points,setP1] = useState(0);
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)

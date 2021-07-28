@@ -43,7 +43,9 @@ box-shadow: 0px 0px 12px 0px rgba(255,15,15,1);
 }
 .ganador{
     font-family: 'Roboto', sans-serif;
-    color: #ddd;
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
