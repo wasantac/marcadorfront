@@ -3,9 +3,10 @@
   color: #fff;
   font-family: 'Graduate', cursive;
   width: 250px;
-  height: 30px;
+  height: 40px;
   background-color: black;
   position: absolute;
+  font-size: 26px;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -25,12 +26,12 @@
 
 .puntoking {
   position: absolute;
-  top: 30px;
+  top: 40px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   width: 250px;
-  height: 30px;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,6 +54,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #fff;
+  font-size: 26px;
 }
 
 @-webkit-keyframes sombra {
