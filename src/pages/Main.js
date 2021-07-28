@@ -27,19 +27,19 @@ const Main = () => {
         <div className="mh-100 fondo">
 
             <Container className="arriba">
-            <img class="Sirv logo593" data-src="https://baxpidan.sirv.com/logo593.png?cy=75&cw=0&ch=150&w=300&h=300" alt="" />
+            <img className="Sirv logo593" data-src="https://baxpidan.sirv.com/logo593.png?cy=75&cw=0&ch=150&w=300&h=300" alt="" />
                 <Form className="mb-5">
                     <Row>
                         <Col sm={6} md={6}>
                             <FormGroup>
                                 <Label for="p1"><h3 className="text-white">Player 1</h3></Label>
-                                <Input type="text" name="p1" id="p1" onChange={ e => {
+                                <Input type="text" name="p1" id="p1" className="text-center" onChange={ e => {
                                     setOne(e.target.value)
                                 }}/>
                             </FormGroup>
                                 <FormGroup>
                                 <Label for="p1points"><h3 className="text-white">Player 1 Points</h3></Label>
-                                <Input type="number" name="p1points" id="p1points" onChange={ e => {
+                                <Input type="number" name="p1points" id="p1points" className="text-center" onChange={ e => {
                                     setP1(e.target.value)
                                 }}/>
                             </FormGroup>
@@ -47,13 +47,13 @@ const Main = () => {
                         <Col sm={6} md={6}>
                         <FormGroup>
                             <Label for="p2"><h3 className="text-white">Player 2</h3></Label>
-                            <Input type="text" name="p2" id="p2" onChange={ e => {
+                            <Input type="text" name="p2" id="p2" className="text-center" onChange={ e => {
                                 setTwo(e.target.value)
                             }}/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="p2points"><h3 className="text-white">Player 2 Points</h3></Label>
-                            <Input type="number" name="p2points" id="p2points" onChange={ e => {
+                            <Input type="number" name="p2points" id="p2points" className="text-center" onChange={ e => {
                                 setP2(e.target.value)
                             }}/>
                         </FormGroup>
@@ -68,6 +68,8 @@ const Main = () => {
                         p2: [playertwo,p2points],
                     });
                 }}>Actualizar Marcador</Button>
+                <br></br>
+                <a href="/colina" className="btn btn-warning my-3">Ir a marcador Rey de la colina </a>
             </Container>
         
         </div>

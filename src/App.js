@@ -7,6 +7,8 @@ import {
   Route
 } from "react-router-dom";
 import Marcador from './pages/Marcador';
+import Colina from './pages/Colina';
+import Colinamarcador from './pages/Colinamarcador';
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,13 @@ function App() {
           <Route exact path="/marcador">
             <Marcador></Marcador>
           </Route>
+          <Route exact path="/colina">
+            <Colina></Colina>
+          </Route>
+          <Route exact path="/marcadorcolina">
+            <Colinamarcador></Colinamarcador>
+          </Route>
+
         </Switch>
       </Router>
       
