@@ -31,8 +31,6 @@ const Marcador = () => {
                 <div className="wrapper">
         <div className="flx separation">
             <div className="nombre-izq">
-                <span></span>
-                <span></span>
                 <p className="nombre">{playerone}</p>
             </div>
             <div className="paralelogramo izquierdo neon">
@@ -45,11 +43,9 @@ const Marcador = () => {
         </div>
         <div className="flx">
             <div className="nombre-der">
-                <span></span>
-                <span></span>
                 <p className="nombre">{playertwo}</p>
             </div>
-            <div className="paralelogramo derecho neon">
+            <div className="paralelogramo-der derecho neon">
                 <span></span>
                 <span></span>
                 <span></span>
