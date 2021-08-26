@@ -7,6 +7,7 @@ const Colina = () => {
     const [p1points,setP1] = useState(0);
     const [socket,setSocket] = useState();
     const [show,setShow] = useState(false);
+    const [first,setFirst] = useState(true);
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
         setSocket(s);
@@ -39,10 +40,13 @@ const Colina = () => {
                 }}>Actualizar Marcador</Button>
             <Button className="btn-danger mt-5 mx-5" onClick={e => {
                     setShow(!show)
+                    if(first){
+                        setFirst(false);
+                    }
                     socket.emit("send-ganador",{
                         ganador: show
                     });
-            }}>Mostrar Ganador</Button>
+            }}>{first ? "Activar Efecto": show ? "Mostrar Ganador":"Ocultar Ganador"}</Button>
                 <br></br>
                 <a href="/" className="btn btn-warning my-3">Ir a  menu principal</a>
             </Container>
