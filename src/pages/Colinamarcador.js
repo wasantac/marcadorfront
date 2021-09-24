@@ -37,7 +37,7 @@ const Colinamarcador = () => {
                 <span className="puntos">{p1points}</span>
             </div>
             <div className={show ? "ganador" : "ocultar"}>
-                <span className="bigtext">{playerone}<br></br></span> es el rey de la colina
+                <span className="bigtext">{playerone}<br></br></span> es el rey de la salsa
             </div>
             
         </div>
