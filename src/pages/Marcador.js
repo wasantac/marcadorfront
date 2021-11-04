@@ -41,7 +41,7 @@ const Marcador = () => {
         return () => {
             s.disconnect();
         }
-    },[p1points,p2points])
+    },[p1points,p2points,open])
     return (
         <div className={!open? "d-none":""}>
         <div className={!open ? "" : "hidding-square"}></div>

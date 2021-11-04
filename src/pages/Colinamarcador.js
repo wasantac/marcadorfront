@@ -31,7 +31,7 @@ const Colinamarcador = () => {
         <div>
             <div className={show ? "opaco" : "ocultar"}></div>
             <div className="nombreking">
-                {playerone}
+                <span className="nombre-span">{playerone}</span>
             </div>
             <div className="puntoking">
                 <span className="puntos">{p1points}</span>

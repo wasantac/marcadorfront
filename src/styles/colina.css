@@ -1,18 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&family=Fugaz+One&display=swap");
 body {
   background-color: transparent;
 }
 
+.nombre-span {
+  position: relative;
+  top: -10%;
+}
+
 .nombreking {
   color: #fff;
-  font-family: 'Graduate', cursive;
+  font-family: 'Fugaz One', cursive;
   width: 250px;
-  height: 40px;
+  height: 60px;
   background-color: black;
   position: absolute;
   font-size: 26px;
   top: 0;
   left: 50%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   display: -webkit-box;
@@ -24,18 +31,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
 }
 
 .puntoking {
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
-  width: 250px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,24 +50,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e82c25;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  -webkit-box-shadow: 0px 0px 12px 0px #ff0f0f;
-  box-shadow: 0px 0px 12px 0px #ff0f0f;
-  -webkit-animation: sombra 2s ease 0s infinite alternate;
-          animation: sombra 2s ease 0s infinite alternate;
+  background-color: #1f6391;
+  border-radius: 50%;
 }
 
 .bigtext {
   font-size: 200px;
-  font-family: 'Graduate', cursive;
+  font-family: 'Fugaz One', cursive;
   -webkit-animation: movebig 2s ease 0s;
           animation: movebig 2s ease 0s;
 }
 
 .ganador {
-  font-family: 'Graduate', cursive;
+  font-family: 'Fugaz One', cursive;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -153,31 +153,9 @@ body {
 }
 
 .puntos {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fugaz One', sans-serif;
   font-weight: bold;
   color: #fff;
   font-size: 26px;
-}
-
-@-webkit-keyframes sombra {
-  0% {
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(255, 15, 15, 0);
-    box-shadow: 0px 0px 20px 0px rgba(255, 15, 15, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0px 0px 20px 0px #ff0f0f;
-    box-shadow: 0px 0px 20px 0px #ff0f0f;
-  }
-}
-
-@keyframes sombra {
-  0% {
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(255, 15, 15, 0);
-    box-shadow: 0px 0px 20px 0px rgba(255, 15, 15, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0px 0px 20px 0px #ff0f0f;
-    box-shadow: 0px 0px 20px 0px #ff0f0f;
-  }
 }
 /*# sourceMappingURL=colina.css.map */
