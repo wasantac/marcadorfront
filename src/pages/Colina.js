@@ -18,7 +18,7 @@ const Colina = () => {
     return (
         <div className="mh-100 fondo">
             <Container>
-            <img className="Sirv logo593" data-src="https://baxpidan.sirv.com/logo593.png?cy=75&cw=0&ch=150&w=300&h=300" alt="" />
+            <h1 className="text-white">GoGoFriendZ</h1>
             <Form>
                 <FormGroup>
                     <Label for="p1"><h3 className="text-white">King</h3></Label>
