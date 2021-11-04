@@ -11,7 +11,7 @@ body {
 .nombreking {
   color: #fff;
   font-family: 'Fugaz One', cursive;
-  width: 250px;
+  width: 300px;
   height: 60px;
   background-color: black;
   position: absolute;
@@ -148,8 +148,77 @@ body {
   }
 }
 
+@-webkit-keyframes ocultarganador {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  99% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes ocultarganador {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  99% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    display: none;
+  }
+}
+
+@-webkit-keyframes hidenombres {
+  0% {
+    color: white;
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    color: transparent;
+  }
+}
+
+@keyframes hidenombres {
+  0% {
+    color: white;
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    color: transparent;
+  }
+}
+
 .ocultar {
-  display: none;
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation: ocultarganador 1s ease forwards;
+          animation: ocultarganador 1s ease forwards;
+}
+
+.ocultar-ganador {
+  position: absolute;
+  top: 50%;
+  font-family: 'Fugaz One', cursive;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  -webkit-animation: hidenombres 2s ease forwards;
+          animation: hidenombres 2s ease forwards;
 }
 
 .puntos {

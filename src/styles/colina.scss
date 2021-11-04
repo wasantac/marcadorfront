@@ -11,7 +11,7 @@ body{
 .nombreking{
     color: #fff;
     font-family: 'Fugaz One', cursive;
-    width: 250px;
+    width: 300px;
     height: 60px;
     background-color:rgb(0, 0, 0);
     position:absolute;
@@ -89,11 +89,46 @@ body{
         font-size: 50px;
     }
 }
-
-.ocultar{
-    display: none;
+@keyframes ocultarganador {
+    0%{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    99%{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100%{
+        display: none;
+    }
 }
+@keyframes hidenombres {
+    0%{
+        color: white;
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateX(-50%);
+    }
+    100%{
+        opacity: 0;
+        color: transparent
+    }
+}
+.ocultar{
 
+    width: 100vw;
+    height: 100vh;
+    animation: ocultarganador 1s ease forwards;
+}
+.ocultar-ganador{
+    position: absolute;
+    top: 50%;
+    font-family: 'Fugaz One', cursive;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    animation: hidenombres 2s ease forwards;
+
+}
 .puntos{
     font-family: 'Fugaz One', sans-serif;
     font-weight: bold;

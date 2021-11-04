@@ -23,7 +23,6 @@ p {
   height: 100%;
   z-index: 9999;
   animation: openpoints 3s ease forwards reverse;
-  border-radius: 10%;
 }
 
 .hidding-square-right {
@@ -34,7 +33,6 @@ p {
   height: 100%;
   z-index: 9999;
   animation: openpoints 3s ease forwards reverse;
-  border-radius: 10%;
 }
 
 @-webkit-keyframes openpoints {
@@ -69,7 +67,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .flx {
