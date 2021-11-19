@@ -1,148 +1,213 @@
-@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&family=Fugaz+One&display=swap');
-$red: #1f6391;
-p{
-    color:#fff;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    font-size:26px;
-    margin: 0;
-    height: 35px;
+@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&family=Bebas+Neue&family=Fugaz+One&display=swap");
+$red: #e12139;
+$morado: #2b2d42;
+p {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0;
+  height: 35px;
 }
-.hidding-square{
-    background-color: #fff;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    z-index: 9999;
-    animation: openpoints 3s ease forwards reverse;
+
+.trapecio-nombre {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 200px;
+  height: 40px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 40px solid $morado;
+  transform: translate(-50%);
 }
-.hidding-square-right{
-    background-color: #fff;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    height: 100%;
-    z-index: 9999;
-    animation: openpoints 3s ease forwards reverse;
+.trapecio-nombre-borde {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 220px;
+  height: 40px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 40px solid $red;
+  transform: translate(-50%);
+  z-index: -1;
+}
+
+.span-texto {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -100%);
+  color: white;
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  width: 100px;
+}
+.bandera-izq {
+  width: auto;
+  height: 40px;
+  z-index: 999;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+.bandera-der {
+  width: auto;
+  height: 40px;
+  z-index: 999;
+  align-items: center;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.p-der {
+  justify-content: right !important;
+  padding-right: 50px;
+  margin: 0;
+  height: 100%;
+  font-size: 30px;
+}
+.p-izq {
+  justify-content: left !important;
+  padding-left: 50px;
+  margin: 0;
+  height: 100%;
+  font-size: 30px;
+}
+.hidding-square {
+  background-color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  z-index: 9999;
+  animation: openpoints 3s ease forwards reverse;
+}
+.hidding-square-right {
+  background-color: #fff;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: 9999;
+  animation: openpoints 3s ease forwards reverse;
 }
 @keyframes openpoints {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 50%;
-    }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
 }
-.wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    
-}
-
-.flx{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.separation{
-    margin-right: 250px;
+.flx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.paralelogramo{
-    background-color: $red;
-    width: 60px;
-    height: 50px;
-    border-radius: 5px;
+.separation {
+  margin-right: 350px;
 }
 
-
-.nombre-izq{
-    background: rgb(0,0,0);
-    height: 40px;
-    width: 20%;
-    margin: 0;
-    opacity: 0.7;
-    position: absolute;
-    border-radius: 7px;
-    left:22%;
-}
-.nombre-der{
-    background: rgb(0,0,0);
-    border-radius: 7px;
-    height: 40px;
-    width: 20%;
-    margin: 0;
-    opacity: 0.7;
-    position: absolute;
-    right:22%;
+.paralelogramo {
+  background-color: $red;
+  width: 60px;
+  height: 50px;
+  border-radius: 5px;
 }
 
+.nombre-izq {
+  background: $morado;
+  height: 40px;
+  width: 30%;
+  margin: 0;
 
+  position: absolute;
+  border-radius: 7px;
+  left: 8%;
+}
+.nombre-der {
+  background: $morado;
+  border-radius: 7px;
+  height: 40px;
+  width: 30%;
+  margin: 0;
 
-.izquierdo{
-    transform: skew(0deg);
-}
-.derecho{
-    transform: skew(0deg);
-}
-
-.noskew{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:15%;
-    font-family: 'Fugaz One', cursive;
-
-
-}
-.noskewleft{
-    transform: skew(0deg)
-}
-.noskewright{
-    transform: skew(0deg)
-}
-.nombre{
-    font-family: 'Fugaz One', sans-serif;
-    margin: 0;
-    height: 100%;
-    
+  position: absolute;
+  right: 8%;
 }
 
+.izquierdo {
+  transform: skew(0deg);
+}
+.derecho {
+  transform: skew(0deg);
+}
+
+.noskew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "Fugaz One", cursive;
+  font-size: 35px;
+  margin: 0;
+}
+.noskewleft {
+  transform: skew(0deg);
+}
+.noskewright {
+  transform: skew(0deg);
+}
+.nombre {
+  font-family: "Bebas Neue", sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  letter-spacing: 1px;
+  font-size: 30px;
+  justify-content: space-between;
+}
 
 @keyframes flip {
-    0%{
-        transform: rotateX(0deg);
-    }
-    100%{
-        transform: rotateX(-90deg);
-    }
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
 }
 
 @keyframes unflip {
-    0%{
-        transform: rotateX(-90deg);
-    }
-    100%{
-        transform: rotateX(0deg);
-    }
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }
 
-.flip{
-    animation: flip 0.5s ease forwards;
+.flip {
+  animation: flip 0.5s ease forwards;
 }
-.no-flip{
-    animation: unflip 0.5s ease forwards;
+.no-flip {
+  animation: unflip 0.5s ease forwards;
 }
 
-.neon-dark{
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+.neon-dark {
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
 }

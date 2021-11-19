@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Roboto&family=Bebas+Neue&family=Fugaz+One&display=swap");
 body {
   background-color: transparent;
 }
@@ -10,16 +10,16 @@ body {
 
 .nombreking {
   color: #fff;
-  font-family: 'Fugaz One', cursive;
+  font-family: "Bebas Neue", cursive;
   width: 300px;
   height: 60px;
-  background-color: black;
+  background-color: #2b2d42;
   position: absolute;
-  font-size: 26px;
+  font-size: 30px;
   top: 0;
   left: 50%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   display: -webkit-box;
@@ -50,19 +50,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1f6391;
+  background-color: #e12139;
   border-radius: 50%;
 }
 
 .bigtext {
   font-size: 200px;
-  font-family: 'Fugaz One', cursive;
+  font-family: "Fugaz One", cursive;
   -webkit-animation: movebig 2s ease 0s;
           animation: movebig 2s ease 0s;
 }
 
 .ganador {
-  font-family: 'Fugaz One', cursive;
+  font-family: "Fugaz One", cursive;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -212,7 +212,7 @@ body {
 .ocultar-ganador {
   position: absolute;
   top: 50%;
-  font-family: 'Fugaz One', cursive;
+  font-family: "Fugaz One", cursive;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -222,8 +222,7 @@ body {
 }
 
 .puntos {
-  font-family: 'Fugaz One', sans-serif;
-  font-weight: bold;
+  font-family: "Fugaz One", sans-serif;
   color: #fff;
   font-size: 26px;
 }

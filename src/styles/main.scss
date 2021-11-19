@@ -1,20 +1,25 @@
-$darkblue : #221A4D;
-$tricolor: #2A356D;
-body{
-    overflow: hidden;
-}
-.fondo{
-    background-color: #000;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-.arriba{
-    z-index: 9999;
-}
-.logo593{
-    transform: scale(1.5)
+$darkblue: #221a4d;
+$tricolor: #2a356d;
+$morado: #2b2d42;
+
+body {
+  height: 100vh;
+  width: 100%;
 }
 
+.contenedor {
+  background-color: $morado;
+  width: 100vw;
+  padding: 50px;
+  height: 100%;
+}
+
+.arriba {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
