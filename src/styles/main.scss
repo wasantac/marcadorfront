@@ -4,7 +4,7 @@ body{
     overflow: hidden;
 }
 .fondo{
-    background-color: $darkblue;
+    background-color: #000;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -18,42 +18,3 @@ body{
     transform: scale(1.5)
 }
 
-
-@function randomNum($min, $max) {
-    $rand: random();
-    $randomNum: $min + floor($rand * (($max - $min) + 1));
-  
-    @return $randomNum;
-  }
-@for $i from 0 through 25{ 
-    $x :random(100) + vh;
-    $y:random(100) + vw;
-    $x2 :random(100) + vh;
-    $y2:random(100) + vw;
-    span.triangle:nth-child(#{$i}){
-        width: 0;
-        height: 0;
-        border-top: (random(50) + 50) + px solid transparent;
-        border-right: (random(100) + 100) + px solid $tricolor;
-        border-bottom: (random(50) + 50) + px solid transparent;
-        opacity: 0.5;
-        position: absolute;
-        top: $x;
-        left: $y;
-        transform: rotate(random(360) + deg);
-        animation: 100s move#{$i} infinite linear alternate;
-    }
-    @keyframes move#{$i} {
-        0%{
-            top: $x;
-            left: $y;
-            transform: rotate(random(360) + deg);
-        }
-        100%{
-            top: $x2;
-            left: $y2;
-            transform: rotate(random(360) + deg);
-        }
-    }
-
-}

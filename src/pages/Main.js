@@ -24,10 +24,9 @@ const Main = () => {
       triangles.push(<span className="triangle" key={i}></span>)
     }
     return (
-        <div className="mh-100 fondo">
-
+        <div className="mh-100 fondo">  
             <Container className="arriba">
-            <img className="Sirv logo593" data-src="https://baxpidan.sirv.com/logo593.png?cy=75&cw=0&ch=150&w=300&h=300" alt="" />
+            <h1 className="text-white">GoGoFriendZ</h1>
                 <Form className="mb-5">
                     <Row>
                         <Col sm={6} md={6}>
@@ -62,14 +61,22 @@ const Main = () => {
                     
 
                 </Form>
-                <Button className="btn-danger" onClick={e => {
+                <Button className="my-1" onClick={
+                    e=>{
+                        socket.emit("open-points",{open:true});
+                    }
+                }>
+                    Activar Marcador
+                </Button>
+                <br></br>
+                <Button className="btn-danger my-1" onClick={e => {
                     socket.emit("send-data",{
                         p1: [playerone,p1points],
                         p2: [playertwo,p2points],
                     });
                 }}>Actualizar Marcador</Button>
                 <br></br>
-                <a href="/colina" className="btn btn-warning my-3">Ir a marcador Rey de la colina </a>
+                <a href="/colina" className="btn btn-warning my-1">Ir a marcador Rey de la colina </a>
             </Container>
         
         </div>
