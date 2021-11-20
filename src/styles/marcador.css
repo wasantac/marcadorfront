@@ -52,7 +52,7 @@ p {
   color: white;
   font-family: "Bebas Neue";
   font-size: 25px;
-  width: 100px;
+  width: 200px;
 }
 
 .bandera-izq {
@@ -97,8 +97,27 @@ p {
   font-size: 30px;
 }
 
+.rectangle-hide {
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  z-index: 9999;
+  width: 50%;
+  display: block;
+}
+
+.rectangle-hide-left {
+  background-color: #2b2d42;
+  left: 0%;
+}
+
+.rectangle-hide-right {
+  background-color: #e12139;
+  right: 0%;
+}
+
 .hidding-square {
-  background-color: #fff;
+  background-color: #2b2d42;
   position: absolute;
   top: 0%;
   left: 0%;
@@ -108,13 +127,14 @@ p {
 }
 
 .hidding-square-right {
-  background-color: #fff;
+  background-color: #e12139;
   position: absolute;
   top: 0%;
   right: 0%;
   height: 100%;
   z-index: 9999;
   animation: openpoints 3s ease forwards reverse;
+  width: 50%;
 }
 
 @-webkit-keyframes openpoints {

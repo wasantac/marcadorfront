@@ -67,45 +67,48 @@ const Marcador = () => {
     }
 
     return (
-        <div className={!open ? "d-none" : ""}>
-            <div className={!open ? "" : "hidding-square"}></div>
-            <div className={!open ? "" : "hidding-square-right"}></div>
-            <div className="trapecio-nombre"><span className="span-texto">{texto}</span></div>
-            <div className="trapecio-nombre-borde"></div>
-            <div className="wrapper">
+        <React.Fragment>
+            <div className={!open ? "rectangle-hide rectangle-hide-left" : "hidding-square"}></div>
+            <div className={!open ? "rectangle-hide rectangle-hide-right" : "hidding-square-right"}></div>
+            <div className={!open ? "d-none" : ""}>
 
-                <div className="flx separation">
+                <div className="trapecio-nombre"><span className="span-texto">{texto}</span></div>
+                <div className="trapecio-nombre-borde"></div>
+                <div className="wrapper">
 
-                    <div className="nombre-izq">
-                        <div className="d-flex nombre ">
-                            <img src={paisesEscoger(pais.p1C)} className="bandera-izq" alt="bandera" />
-                            <p className="p-der">{playerone}</p>
+                    <div className="flx separation">
+
+                        <div className="nombre-izq">
+                            <div className="d-flex nombre ">
+                                <img src={paisesEscoger(pais.p1C)} className="bandera-izq" alt="bandera" />
+                                <p className="p-der">{playerone}</p>
+                            </div>
+
+
                         </div>
-
-
-                    </div>
-                    <div className="paralelogramo izquierdo neon">
-                        <p className={p1Change ? "noskew noskewleft flip" : "noskew noskewleft no-flip"} onAnimationEnd={e => {
-                            setP1Change(false)
-                        }}>{p1points}</p>
-                    </div>
-                </div>
-
-                <div className="flx">
-                    <div className="nombre-der ">
-                        <div className="d-flex nombre">
-                            <p className=" p-izq">{playertwo}</p>
-                            <img src={paisesEscoger(pais.p2C)} className="bandera-der" alt="bandera" />
+                        <div className="paralelogramo izquierdo neon">
+                            <p className={p1Change ? "noskew noskewleft flip" : "noskew noskewleft no-flip"} onAnimationEnd={e => {
+                                setP1Change(false)
+                            }}>{p1points}</p>
                         </div>
                     </div>
-                    <div className="paralelogramo derecho neon">
-                        <p className={p2Change ? "noskew noskewleft flip" : "noskew noskewleft no-flip"} onAnimationEnd={e => {
-                            setP2Change(false)
-                        }}>{p2points}</p>
+
+                    <div className="flx">
+                        <div className="nombre-der ">
+                            <div className="d-flex nombre">
+                                <p className=" p-izq">{playertwo}</p>
+                                <img src={paisesEscoger(pais.p2C)} className="bandera-der" alt="bandera" />
+                            </div>
+                        </div>
+                        <div className="paralelogramo derecho neon">
+                            <p className={p2Change ? "noskew noskewleft flip" : "noskew noskewleft no-flip"} onAnimationEnd={e => {
+                                setP2Change(false)
+                            }}>{p2points}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 }
 
