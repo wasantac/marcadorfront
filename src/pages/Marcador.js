@@ -61,6 +61,9 @@ const Marcador = () => {
             case "Spain": {
                 return "https://flagcdn.com/w320/es.png"
             }
+            case "Estados Unidos": {
+                return "https://flagcdn.com/w320/us.png"
+            }
             default:
                 return "https://flagcdn.com/w320/ec.png"
         }

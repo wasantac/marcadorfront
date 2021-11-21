@@ -56,7 +56,7 @@ p {
 }
 
 .bandera-izq {
-  width: auto;
+  width: 80px;
   height: 40px;
   z-index: 999;
   -webkit-box-align: center;
@@ -67,7 +67,7 @@ p {
 }
 
 .bandera-der {
-  width: auto;
+  width: 80px;
   height: 40px;
   z-index: 999;
   -webkit-box-align: center;

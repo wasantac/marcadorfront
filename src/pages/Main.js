@@ -25,7 +25,7 @@ const Main = () => {
     for (let i = 0; i < 25; i++) {
         triangles.push(<span className="triangle" key={i}></span>)
     }
-    let paises = ["Ecuador", "Argentina", "Mexico", "Spain"]
+    let paises = ["Ecuador", "Argentina", "Mexico", "Spain", "Estados Unidos"]
     return (
         <div className="arriba contenedor">
             <img src={gogo} alt="" width="auto" height="200px"></img>
