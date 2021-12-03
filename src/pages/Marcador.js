@@ -71,8 +71,6 @@ const Marcador = () => {
 
     return (
         <React.Fragment>
-            <div className={!open ? "rectangle-hide rectangle-hide-left" : "hidding-square"}></div>
-            <div className={!open ? "rectangle-hide rectangle-hide-right" : "hidding-square-right"}></div>
             <div className={!open ? "d-none" : ""}>
 
                 <div className="trapecio-nombre"><span className="span-texto">{texto}</span></div>
