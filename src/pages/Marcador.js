@@ -64,6 +64,15 @@ const Marcador = () => {
             case "Estados Unidos": {
                 return "https://flagcdn.com/w320/us.png"
             }
+            case "Peru": {
+                return "https://flagcdn.com/w320/pe.png"
+            }
+            case "Colombia": {
+                return "https://flagcdn.com/w320/co.png"
+            }
+            case "Chile": {
+                return "https://flagcdn.com/w320/cl.png"
+            }
             default:
                 return "https://flagcdn.com/w320/ec.png"
         }
