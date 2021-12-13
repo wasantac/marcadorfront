@@ -73,6 +73,9 @@ const Marcador = () => {
             case "Chile": {
                 return "https://flagcdn.com/w320/cl.png"
             }
+            case "Puerto Rico": {
+                return "https://flagcdn.com/w320/pr.png"
+            }
             default:
                 return "https://flagcdn.com/w320/ec.png"
         }
