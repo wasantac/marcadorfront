@@ -3,6 +3,7 @@ import { io } from 'socket.io-client';
 import { Form, FormGroup, Label, Input, Button, Col, Row } from 'reactstrap';
 import gogo from '../GoGoNBG.png'
 import '../styles/main.css'
+import axios from 'axios';
 
 const { REACT_APP_URL } = process.env;
 
@@ -14,6 +15,7 @@ const Main = () => {
     const [socket, setSocket] = useState();
     const [texto, setTexto] = useState('');
     const [pais, setPais] = useState({ p1C: 'Ecuador', p2C: 'Ecuador' });
+    const [paises, setPaises] = useState([])
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
         setSocket(s);
@@ -21,11 +23,20 @@ const Main = () => {
             s.disconnect();
         }
     }, []);
+
+    useEffect(() => {
+        axios.get("https://countriesnow.space/api/v0.1/countries/iso").then(res => {
+            let data = res.data.data;
+            setPaises(data.map(country => {
+                return (country["name"])
+            }))
+        })
+    }, [])
     let triangles = [];
     for (let i = 0; i < 25; i++) {
         triangles.push(<span className="triangle" key={i}></span>)
     }
-    let paises = ["Ecuador", "Argentina", "Mexico", "Spain", "Estados Unidos", "Peru", "Colombia", "Chile","Puerto Rico"]
+    //let paises = ["Ecuador", "Argentina", "Mexico", "Spain", "Estados Unidos", "Peru", "Colombia", "Chile", "Puerto Rico"]
     return (
         <div className="arriba contenedor">
             <img src={gogo} alt="" width="auto" height="200px"></img>

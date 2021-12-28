@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import '../styles/marcador.css'
+import axios from 'axios';
+
+
 const { REACT_APP_URL } = process.env;
 const Marcador = () => {
     const [playerone, setOne] = useState("player1");
@@ -12,6 +15,21 @@ const Marcador = () => {
     const [open, setOpen] = useState(true)
     const [texto, setTexto] = useState('Reto')
     const [pais, setPais] = useState({ p1C: 'Ecuador', p2C: 'Ecuador' });
+    const [paises, setPaises] = useState({})
+
+    useEffect(() => {
+        axios.get("https://countriesnow.space/api/v0.1/countries/iso").then(res => {
+            let data = res.data.data;
+            let dict = {}
+            data.map(country => {
+                let name = country["name"]
+                let iso = country["Iso2"]
+                dict[name] = iso
+                return country
+            })
+            setPaises(dict)
+        })
+    }, [])
 
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
@@ -48,37 +66,8 @@ const Marcador = () => {
     }, [p1points, p2points, open])
 
     const paisesEscoger = (pais) => {
-        switch (pais) {
-            case 'Ecuador': {
-                return "https://flagcdn.com/w320/ec.png"
-            }
-            case "Argentina": {
-                return "https://flagcdn.com/w320/ar.png"
-            }
-            case "Mexico": {
-                return "https://flagcdn.com/w320/mx.png"
-            }
-            case "Spain": {
-                return "https://flagcdn.com/w320/es.png"
-            }
-            case "Estados Unidos": {
-                return "https://flagcdn.com/w320/us.png"
-            }
-            case "Peru": {
-                return "https://flagcdn.com/w320/pe.png"
-            }
-            case "Colombia": {
-                return "https://flagcdn.com/w320/co.png"
-            }
-            case "Chile": {
-                return "https://flagcdn.com/w320/cl.png"
-            }
-            case "Puerto Rico": {
-                return "https://flagcdn.com/w320/pr.png"
-            }
-            default:
-                return "https://flagcdn.com/w320/ec.png"
-        }
+        let abb = paises[pais];
+        return `https://flagcdn.com/w320/${String(abb).toLowerCase()}.png`
     }
 
     return (
