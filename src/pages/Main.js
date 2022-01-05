@@ -19,6 +19,16 @@ const Main = () => {
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
         setSocket(s);
+
+        s.on("receive-request-marcador", data => {
+            console.log(data)
+            setOne(data.p1[0])
+            setTwo(data.p2[0])
+            setP1(data.p1[1])
+            setP2(data.p2[1])
+            setTexto(data.texto)
+            setPais({ p1C: data.p1C, p2C: data.p2C })
+        })
         return () => {
             s.disconnect();
         }
@@ -45,19 +55,19 @@ const Main = () => {
                     <Col sm={6} md={6}>
                         <FormGroup>
                             <Label for="p1"><h3 className="text-white">Player 1</h3></Label>
-                            <Input type="text" name="p1" id="p1" className="text-center" onChange={e => {
+                            <Input type="text" name="p1" id="p1" className="text-center" value={playerone} onChange={e => {
                                 setOne(e.target.value)
                             }} />
                         </FormGroup>
                         <FormGroup>
                             <Label for="p1points"><h3 className="text-white">Player 1 Points</h3></Label>
-                            <Input type="number" name="p1points" id="p1points" className="text-center" onChange={e => {
+                            <Input type="number" name="p1points" id="p1points" className="text-center" value={p1points} onChange={e => {
                                 setP1(e.target.value)
                             }} />
                         </FormGroup>
                         <FormGroup>
                             <Label for="p1points"><h3 className="text-white">Player 1 Country</h3></Label>
-                            <Input type="select" name="p1Country" id="p1Country" className="text-center" onChange={e => {
+                            <Input type="select" name="p1Country" id="p1Country" className="text-center" value={pais.p1C} onChange={e => {
                                 setPais({ ...pais, p1C: e.target.value })
                             }} >
                                 {paises.map(pais => {
@@ -69,19 +79,19 @@ const Main = () => {
                     <Col sm={6} md={6}>
                         <FormGroup>
                             <Label for="p2"><h3 className="text-white">Player 2</h3></Label>
-                            <Input type="text" name="p2" id="p2" className="text-center" onChange={e => {
+                            <Input type="text" name="p2" id="p2" className="text-center" value={playertwo} onChange={e => {
                                 setTwo(e.target.value)
                             }} />
                         </FormGroup>
                         <FormGroup>
                             <Label for="p2points"><h3 className="text-white">Player 2 Points</h3></Label>
-                            <Input type="number" name="p2points" id="p2points" className="text-center" onChange={e => {
+                            <Input type="number" name="p2points" id="p2points" className="text-center" value={p2points} onChange={e => {
                                 setP2(e.target.value)
                             }} />
                         </FormGroup>
                         <FormGroup>
                             <Label for="p1points"><h3 className="text-white">Player 2 Country</h3></Label>
-                            <Input type="select" name="p2Country" id="2Country" className="text-center" onChange={e => {
+                            <Input type="select" name="p2Country" id="2Country" className="text-center" value={pais.p2C} onChange={e => {
                                 setPais({ ...pais, p2C: e.target.value })
                             }} >
                                 {paises.map(pais => {
@@ -93,7 +103,7 @@ const Main = () => {
                     <Col sm={12} md={12}>
                         <FormGroup>
                             <Label for="p2"><h3 className="text-white">Estado Reto/Torneo</h3></Label>
-                            <Input type="text" name="p2" id="p2" className="text-center" onChange={e => {
+                            <Input type="text" name="p2" id="p2" className="text-center" value={texto} onChange={e => {
                                 setTexto(e.target.value)
                             }} />
                         </FormGroup>
@@ -102,12 +112,12 @@ const Main = () => {
 
 
             </Form>
-            <Button className="my-1" onClick={
+            <Button className="my-1 btn-success" onClick={
                 e => {
-                    socket.emit("open-points", { open: true });
+                    socket.emit("send-request", { getData: true });
                 }
             }>
-                Activar Marcador
+                Obtener datos del Marcador
             </Button>
             <br></br>
             <Button className="btn-danger my-1" onClick={e => {

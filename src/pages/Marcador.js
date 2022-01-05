@@ -34,6 +34,15 @@ const Marcador = () => {
     useEffect(() => {
         const s = io(`${REACT_APP_URL}`)
 
+        s.on("receive-request", data => {
+            s.emit("send-request-marcador", {
+                p1: [playerone, p1points],
+                p2: [playertwo, p2points],
+                texto: texto,
+                ...pais
+            });
+        })
+
         s.on("send-animation", data => {
             setOpen(!open)
         })
@@ -63,7 +72,7 @@ const Marcador = () => {
         return () => {
             s.disconnect();
         }
-    }, [p1points, p2points, open])
+    }, [p1points, p2points, open, pais, playerone, playertwo, texto])
 
     const paisesEscoger = (pais) => {
         let abb = paises[pais];
