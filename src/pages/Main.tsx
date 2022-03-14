@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import { io, Socket } from "socket.io-client";
 import {
     Form,
     FormGroup,
@@ -13,6 +13,8 @@ import {
 import gogo from "../GoGoNBG.png";
 import "../styles/main.css";
 import axios from "axios";
+import MarcadorSmall from "../components/MarcadorSmall";
+import { DefaultEventsMap } from "socket.io-client/build/typed-events";
 
 const { REACT_APP_URL } = process.env;
 
@@ -21,7 +23,8 @@ const Main = () => {
     const [p1points, setP1] = useState(0);
     const [playertwo, setTwo] = useState("player2");
     const [p2points, setP2] = useState(0);
-    const [socket, setSocket] = useState();
+    const [socket, setSocket] =
+        useState<Socket<DefaultEventsMap, DefaultEventsMap>>();
     const [texto, setTexto] = useState("");
     const [pais, setPais] = useState({ p1C: "Ecuador", p2C: "Ecuador" });
     const [paises, setPaises] = useState([]);
@@ -43,25 +46,31 @@ const Main = () => {
         };
     }, []);
 
+    interface Country {
+        name: string;
+        Iso2: string;
+        Iso3: string;
+    }
+
     useEffect(() => {
         axios
             .get("https://countriesnow.space/api/v0.1/countries/iso")
             .then((res) => {
                 let data = res.data.data;
                 setPaises(
-                    data.map((country) => {
+                    data.map((country: Country) => {
                         return country["name"];
                     })
                 );
             });
     }, []);
 
-    const handleObtenerDatos = (e) => {
-        socket.emit("send-request", { getData: true });
+    const handleObtenerDatos = () => {
+        socket!.emit("send-request", { getData: true });
     };
 
-    const handleActualizarDatos = (e) => {
-        socket.emit("send-data", {
+    const handleActualizarDatos = () => {
+        socket!.emit("send-data", {
             p1: [playerone, p1points],
             p2: [playertwo, p2points],
             texto: texto,
@@ -72,6 +81,14 @@ const Main = () => {
     return (
         <div className="arriba contenedor">
             <img src={gogo} alt="" width="auto" height="200px"></img>
+            <MarcadorSmall
+                players={{
+                    player1: playerone,
+                    player2: playertwo,
+                    p1points: p1points,
+                    p2points: p2points,
+                }}
+            ></MarcadorSmall>
             <Form className="mb-5">
                 <Row>
                     <Col sm={6} md={6}>
@@ -101,7 +118,7 @@ const Main = () => {
                                 className="text-center"
                                 value={p1points}
                                 onChange={(e) => {
-                                    setP1(e.target.value);
+                                    setP1(parseInt(e.target.value));
                                 }}
                             />
                         </FormGroup>
@@ -156,7 +173,7 @@ const Main = () => {
                                 className="text-center"
                                 value={p2points}
                                 onChange={(e) => {
-                                    setP2(e.target.value);
+                                    setP2(parseInt(e.target.value));
                                 }}
                             />
                         </FormGroup>
