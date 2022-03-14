@@ -17,10 +17,10 @@ code {
 }
 
 .pulse {
-    animation: pulse 1s ease infinite;
+    animation: pulseMove 1s ease infinite;
 }
 
-@keyframes pulse {
+@keyframes pulseMove {
     0% {
         opacity: 100%;
     }

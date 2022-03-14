@@ -14,11 +14,11 @@ code {
 }
 
 .pulse {
-  -webkit-animation: pulse 1s ease infinite;
-          animation: pulse 1s ease infinite;
+  -webkit-animation: pulseMove 1s ease infinite;
+          animation: pulseMove 1s ease infinite;
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes pulseMove {
   0% {
     opacity: 100%;
   }
@@ -30,7 +30,7 @@ code {
   }
 }
 
-@keyframes pulse {
+@keyframes pulseMove {
   0% {
     opacity: 100%;
   }
