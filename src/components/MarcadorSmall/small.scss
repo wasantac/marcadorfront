@@ -1,0 +1,17 @@
+.pulse {
+    animation-name: pulseMove;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulseMove {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

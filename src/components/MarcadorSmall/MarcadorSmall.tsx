@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "reactstrap";
 import { io } from "socket.io-client";
-import Marcador from "../pages/Marcador";
+import Marcador from "../../pages/Marcador";
 import useWindowDimensions from "./useWindowDimensions";
+import "./small.css";
 
 interface Props {
     players: Players;
@@ -55,7 +56,7 @@ const MarcadorSmall: React.FC<Props> = ({ players }) => {
             <div className="my-2">
                 <div className="text-danger d-flex justify-content-end pr-5">
                     <div>
-                        En vivo <span className="pulse">&#9679;</span> {"  "}
+                        En vivo <span className="pulse">&#9679;</span>
                     </div>
                 </div>
                 {width > 1600 ? (

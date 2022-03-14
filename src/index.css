@@ -12,33 +12,4 @@ code {
 .derecha {
   text-align: right !important;
 }
-
-.pulse {
-  -webkit-animation: pulseMove 1s ease infinite;
-          animation: pulseMove 1s ease infinite;
-}
-
-@-webkit-keyframes pulseMove {
-  0% {
-    opacity: 100%;
-  }
-  50% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
-@keyframes pulseMove {
-  0% {
-    opacity: 100%;
-  }
-  50% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
 /*# sourceMappingURL=index.css.map */

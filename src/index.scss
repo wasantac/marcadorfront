@@ -15,19 +15,3 @@ code {
 .derecha {
     text-align: right !important;
 }
-
-.pulse {
-    animation: pulseMove 1s ease infinite;
-}
-
-@keyframes pulseMove {
-    0% {
-        opacity: 100%;
-    }
-    50% {
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
