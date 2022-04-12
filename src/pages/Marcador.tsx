@@ -91,7 +91,7 @@ const Marcador: React.FC<Props> = ({ showReto = true }) => {
 
     return (
         <React.Fragment>
-            <div className={!open ? "d-none" : ""}>
+            <div className={!open ? "d-none overflow-hidden" : ""}>
                 {showReto ? (
                     <React.Fragment>
                         <div className="trapecio-nombre">
