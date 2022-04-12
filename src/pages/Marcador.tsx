@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
-import "../styles/marcador.css";
+import "../styles/marcador.scss";
 import axios from "axios";
 
 const { REACT_APP_URL } = process.env;

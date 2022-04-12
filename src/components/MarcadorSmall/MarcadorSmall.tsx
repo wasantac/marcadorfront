@@ -3,7 +3,7 @@ import { Container } from "reactstrap";
 import { io } from "socket.io-client";
 import Marcador from "../../pages/Marcador";
 import useWindowDimensions from "./useWindowDimensions";
-import "./small.css";
+import "./small.scss";
 
 interface Props {
     players: Players;

@@ -2,134 +2,141 @@
 $red: #e12139;
 $morado: #2b2d42;
 $blue: #1f6391;
+
+$white-light-blue: #8ecae6;
+$light-blue: #219ebc;
+$darkblue: #023047;
+$yellow: #ffb703;
+$orange: #fb8500;
+
 body {
-  background-color: transparent;
+    background-color: transparent;
 }
 .nombre-span {
-  position: relative;
-  top: -10%;
+    position: relative;
+    top: -10%;
 }
 .nombreking {
-  color: #fff;
-  font-family: "Bebas Neue", cursive;
-  width: 300px;
-  height: 60px;
-  background-color: $morado;
-  position: absolute;
-  font-size: 30px;
-  top: 0;
-  left: 50%;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  transform: translate(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    color: #fff;
+    font-family: "Bebas Neue", cursive;
+    width: 300px;
+    height: 60px;
+    background-color: $darkblue;
+    position: absolute;
+    font-size: 30px;
+    top: 0;
+    left: 50%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .puntoking {
-  position: absolute;
-  top: 42px;
-  left: 50%;
-  transform: translate(-50%);
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $red;
-  border-radius: 50%;
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $orange;
+    border-radius: 50%;
 }
 .bigtext {
-  font-size: 200px;
-  font-family: "Fugaz One", cursive;
-  animation: movebig 2s ease 0s;
+    font-size: 200px;
+    font-family: "Fugaz One", cursive;
+    animation: movebig 2s ease 0s;
 }
 .ganador {
-  font-family: "Fugaz One", cursive;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  animation: moveganador 2s ease 0s;
+    font-family: "Fugaz One", cursive;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation: moveganador 2s ease 0s;
 }
 .opaco {
-  background-color: rgba(0, 0, 0, 0.397);
-  width: 100vw;
-  height: 100vh;
-  animation: opacar 2s ease 0s;
+    background-color: rgba(0, 0, 0, 0.397);
+    width: 100vw;
+    height: 100vh;
+    animation: opacar 2s ease 0s;
 }
 @keyframes opacar {
-  0% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 @keyframes movebig {
-  0% {
-    font-size: 0px;
-  }
-  90% {
-    font-size: 220px;
-  }
-  100% {
-    font-size: 200px;
-  }
+    0% {
+        font-size: 0px;
+    }
+    90% {
+        font-size: 220px;
+    }
+    100% {
+        font-size: 200px;
+    }
 }
 @keyframes moveganador {
-  0% {
-    font-size: 0px;
-  }
-  90% {
-    font-size: 60px;
-  }
-  100% {
-    font-size: 50px;
-  }
+    0% {
+        font-size: 0px;
+    }
+    90% {
+        font-size: 60px;
+    }
+    100% {
+        font-size: 50px;
+    }
 }
 @keyframes ocultarganador {
-  0% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  99% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  100% {
-    display: none;
-  }
+    0% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    99% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        display: none;
+    }
 }
 @keyframes hidenombres {
-  0% {
-    color: white;
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateX(-50%);
-  }
-  100% {
-    opacity: 0;
-    color: transparent;
-  }
+    0% {
+        color: white;
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 0;
+        color: transparent;
+    }
 }
 .ocultar {
-  width: 100vw;
-  height: 100vh;
-  animation: ocultarganador 1s ease forwards;
+    width: 100vw;
+    height: 100vh;
+    animation: ocultarganador 1s ease forwards;
 }
 .ocultar-ganador {
-  position: absolute;
-  top: 50%;
-  font-family: "Fugaz One", cursive;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  animation: hidenombres 2s ease forwards;
+    position: absolute;
+    top: 50%;
+    font-family: "Fugaz One", cursive;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation: hidenombres 2s ease forwards;
 }
 .puntos {
-  font-family: "Fugaz One", sans-serif;
-  color: #fff;
-  font-size: 26px;
+    font-family: "Fugaz One", sans-serif;
+    color: #fff;
+    font-size: 26px;
 }

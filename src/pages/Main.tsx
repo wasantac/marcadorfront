@@ -11,7 +11,7 @@ import {
     Container,
 } from "reactstrap";
 import gogo from "../GoGoNBG.png";
-import "../styles/main.css";
+import "../styles/main.scss";
 import axios from "axios";
 import MarcadorSmall from "../components/MarcadorSmall";
 import { DefaultEventsMap } from "socket.io-client/build/typed-events";
